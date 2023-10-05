@@ -1,0 +1,29 @@
+ANGULAR->lato clinet(è live reload)
+
+Organizzazione per componenti, una per ogni parte, fini a se stessi.
+Nasce per gestire le single page application, più comode visto che non c'è il passaggio di dati ma laboriose per la grafica.
+Ogni componente è compostpo da 3 file(html, typescript, css), oltre i componenti base (app-component per esempio).
+
+ng prefisso per comandi angular
+il path di windows è una variabile d'ambiente, insieme di percorsi riconosciuti(posso renderli universali)
+
+npm config(per trovarla) -> questo pc -> os -> utenti->default -> appData -> roaming -> npm -> copio path -> START: variabili globali per utente -> imposto percorso
+[npm config get prefix -> C:\Users\lucre\AppData\Roaming\npm]
+
+creo nuova applicazione->ng new intro --skip-tests true[nome + comandi per skippare i test] (inizia ad installare i node modules) ->questa cartella non va salvata sul cloud(git), perche vale per tutti i programmi; dobbiamo salvare solo packet-json e packet-lock.json per le dipendenze
+
+se vado nella cartella della mia applicazione trovo la cartella node_modules(ingorabile perche replicabile), src(dove trovo la dorgente del mio codice), i file packet-json e packet-lock.json...
+
+apro la cartella dell'applicazione(dove ho aperto il cmd per creare il tutto) su intelliJ, vado nel file angular.js e cambio il prefix a piacere; in style e scripts linko i file che voglio valgano per tutti i componenti(ad esempio bootstrap)[lo installo dal terminale di intelliJ poi lo cerco nel node_modules, presndo il file che mi serve e copio il path, lo incollo poi in styles o scripts
+
+per attivare il coso scrivo in console ng serve
+
+da intellij-> creo cartella-> apro terminale-> ng-v(versione)-> npm i -g @angular/cli [poi riparo visual studio]-> ng new intro --skip--test true->ng serve/ng serve -o(lo apre in automatico)
+
+creo elemento->ng g c intest (ng generate component + nome)
+
+i file pmultimendi si mettono nella cartella assets(dentro src), oppure copio nel codice l'indirizzo dell'immagine
+
+app component è l'involucro di tutti gli oggetti che creiamo
+
+le variabili di un oggetto le scrivo in ts su export class

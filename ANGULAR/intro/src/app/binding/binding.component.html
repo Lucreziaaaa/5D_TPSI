@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-6 bg-warning">
+    <h3>Fase di beta-testing</h3>
+    <h4>Numero di stress-test eseguiti:{{numTests}}</h4>
+  </div>
+  <div class="col-sm-6 bg-light">
+    <h3>Confronto tra interpolazione di stringa e propietà vincolante</h3>
+    <h4>interpolazione di stringa: <span class="text-primary">{{car.model}}</span></h4>
+    <h4>propretà vincolante: <span class="text-danger" [textContent]="car.model"></span></h4><!--con [nome propretà] rendo la propretà html in propretà vincolante TS-->
+    <hr width="70%">
+    <div><img src="{{car.img}}" alt=""></div>
+    <div><img [src]="car.img" alt=""></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 bg-info bg-opacity-50 p-3">
+    <h3>test evento click su btn</h3>
+    <button></button>
+    </div>
+</div>
