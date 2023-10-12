@@ -14,7 +14,65 @@
 </div>
 <div class="row">
   <div class="col-sm-6 bg-info bg-opacity-50 p-3">
-    <h3>test evento click su btn</h3>
-    <button></button>
+    <h3>test  evento click su btn</h3>
+    <button class="btn btn-danger" (click)="getClick()">CLICK TEST</button><!--lego evento-->
+  </div>
+  <div class="col-sm-6 bg-info bg-opacity-50 p-3">
+    <h3>vendi auto</h3>
+    <button class="btn btn-dark" [disabled]="!car.available">VENDI AUTO</button><!--disabilito se macchina non è disponibile (uso attributi angular)-->
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 bg-light">
+    <h3>binding classi css</h3>
+    <p [class]="myclass">testo formattato in rosso</p>
+    <p [class.blue]="setBlueClass">testo scritto in blu...forse</p>
+  </div>
+  <div class="col-sm-6 bg-dark text-white">
+    <h3>direttiva ngClass</h3>
+    <p [ngClass]="componentClasses">paragrafo formattato tramite ngClass</p>
+    <p [ngClass]="{
+      'cl1':!formOK,
+      'cl2':formOK && admin
+      }">paragrafo formattato dinamicamente</p>
+    <p>formOk: {{formOK}}</p>
+    <p>admin. {{admin}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 bg-warning">
+    <h3>direttiva ngSyle</h3>
+    <p [ngStyle]="componentStyle">paragrafo formattato con direttiva ngStyle</p>
+  </div>
+  <div class="col-sm-6 bg-dark text-white">
+    <!--two-way binding coi form-->
+    <h3>form</h3>
+    <p><input type="color" #myColor></p>
+    <p><input type="range" [(ngModel)]="textSize"></p>
+    <h5>valore textSize: {{textSize}}</h5>
+    <p [ngStyle]="{'font-size':textSize+'px', 'color':myColor.value}">testo modificato dinamicamente in dimensioni e colore</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 bg-secondary text-white">
+    <h3>two-way binding con direttiva ngModel</h3>
+    <p>inserire nome utente: <input type="text" [(ngModel)]="username"></p>
+    <p>inserire voto: <input type="number" [(ngModel)]="voto">
+      <span style="color: pink" *ngIf="voto>10 || voto<2">il voto inserito non è valido</span>
+    </p>
+    <p><button class="btn btn-success" (click)="inviaDati()">invia dati</button></p>
+    <p>username inserito: {{username}}</p>
+    <p [style.background-color]="getColor()" class="m-4 text-dark">voto inserito: {{voto}}</p>
+  </div>
+  <div class="col-sm-6 bg-danger text-white">
+    <h3>direttiva ngFor</h3>
+    <h4>lista degli ingredienti</h4>
+    <div class="row" *ngFor="let item of ingredients;
+                 let i=index;
+                 let pari=even;
+                 let dispari=odd" [ngClass]="{clsPari: pari, clsDispari:dispari}">
+      <div class="col-sm-5" style="height: 40px; line-height: 40px">{{i}}-{{item}}</div>
+      <div class="col-sm-7"><button class="btn btn-light w-100" (click)="delete({item : item})">elimina ingrediente</button></div>
     </div>
+  </div>
 </div>

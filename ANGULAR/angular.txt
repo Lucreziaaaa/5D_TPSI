@@ -7,7 +7,7 @@ Ogni componente è compostpo da 3 file(html, typescript, css), oltre i component
 ng prefisso per comandi angular
 il path di windows è una variabile d'ambiente, insieme di percorsi riconosciuti(posso renderli universali)
 
-npm config(per trovarla) -> questo pc -> os -> utenti->default -> appData -> roaming -> npm -> copio path -> START: variabili globali per utente -> imposto percorso
+npm config(per trovarla) -> questo pc -> os -> utenti ->default -> appData -> roaming -> npm -> copio path -> START: variabili globali per utente -> imposto percorso
 [npm config get prefix -> C:\Users\lucre\AppData\Roaming\npm]
 
 creo nuova applicazione->ng new intro --skip-tests true[nome + comandi per skippare i test] (inizia ad installare i node modules) ->questa cartella non va salvata sul cloud(git), perche vale per tutti i programmi; dobbiamo salvare solo packet-json e packet-lock.json per le dipendenze
@@ -27,3 +27,12 @@ i file pmultimendi si mettono nella cartella assets(dentro src), oppure copio ne
 app component è l'involucro di tutti gli oggetti che creiamo
 
 le variabili di un oggetto le scrivo in ts su export class
+
+
+one-way binding: da TS a HTML, sono l'interpolazione di stringa e propretà vincolanti
+two-way binding: aggiornata sia in TS che HTML(quando uso in form->ngModel[da inserire in app.moule.ts sopra e nel vettore imports])
+
+creo direttiva: #nome da mettere nell'input desiderato da cui si vuole estrapolare qualcosa
+
+*ngif-> appare l'oggetto colo se la condizione è vera
+*ngFor-> crea un elemnto(specificato, tipo div) per ogni elemento del vettore che scorro(funziona come un foreach). Si può creare anche un indice o lavorare con i pari e dispari(creo variabili booleane con proprietà angular even/odd)
